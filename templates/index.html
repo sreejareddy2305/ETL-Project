@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Job Description Predicion</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-size: 15px;
+            background-color :#DAE0E2;
+        }
+
+        p {
+            font-size: 10px;
+        }
+
+        nav {
+            background-color : #2C3335;
+            font-family: 'Merriweather', serif;
+            color: whitesmoke;
+        }
+
+        legend {
+            font-size: 20px;
+        }
+        #submit_btn{
+            margin-top: 30px;
+            width: 150px;
+        }
+        textarea { 
+            font-size: 18px; 
+            height : 200px;
+            width : 500px;
+        }
+        small{
+            font-size : 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav justify-content-center p-3">
+        <h1>FAKE JOB DESCRIPTION PREDICTION</h1>
+    </nav>
+
+    <!-- Form Section to input job description-->
+    <div class="container">
+
+        <form action="{{ url_for('predict')}}" method="POST">
+            <h2 align="center">Enter Job Details :</h2>
+                <!-- <input type="text" name="comment"/> -->
+                <legend>Job Title <small>(If not given fill NULL)</small></legend>
+                <input name="title" type="text" required></input>
+                <br />
+                <div class="row">
+                    <div class="col">
+                        <legend>Description <small>(If not given fill NULL)</small></legend>
+                        <textarea name="description" col="15" required></textarea>
+                    </div>
+                    <div class="col">
+                        <legend>Requirements <small>(If not given fill NULL)</small></legend>
+                        <textarea name="requirement" required></textarea>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-primary btn-lg p-2" id="submit_btn" value="Predict">
+        </form>
+
+    </div>
+    <footer>
+
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
